@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .gradient-header {
+            background: linear-gradient(135deg, #6b48ff 0%, #8f73ff 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 1rem;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .card-title {
+            color: #6b48ff;
+            font-weight: 600;
+        }
+
+        .event-time {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="gradient-header">
+        <div class="container text-center">
+            <h1 class="display-4 mb-2">Event Planner</h1>
+            <p class="lead">Organize your events efficiently and keep track of your schedule</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Add Event Form -->
+        <div class="form-container">
+            <h3 class="mb-4">Add New Event</h3>
+            <form id="eventForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label required-field">Event Name</label>
+                        <input type="text" class="form-control" id="eventName" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label required-field">Date</label>
+                        <input type="date" class="form-control" id="eventDate" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label required-field">Time</label>
+                        <input type="time" class="form-control" id="eventTime" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required-field">Description</label>
+                    <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Add Event</button>
+            </form>
+        </div>
+
+        <!-- Event List -->
+        <div id="eventList" class="row">
+            <!-- Events will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            $('#eventDate').attr('min', today);
+
+            $('#eventForm').on('submit', function(e) {
+                e.preventDefault();
+
+                // Get form values
+                const name = $('#eventName').val();
+                const date = new Date($('#eventDate').val());
+                const time = $('#eventTime').val();
+                const description = $('#eventDescription').val();
+
+                // Format date
+                const formattedDate = date.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                // Create event card
+                const eventCard = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card event-card">
+                            <div class="card-body">
+                                <button class="btn btn-danger btn-sm delete-btn">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                                <h5 class="card-title">${name}</h5>
+                                <p class="event-time mb-2">
+                                    <strong>Date:</strong> ${formattedDate}<br>
+                                    <strong>Time:</strong> ${time}
+                                </p>
+                                <p class="card-text">${description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Add event card to list
+                $('#eventList').prepend(eventCard);
+
+                // Clear form
+                this.reset();
+
+                // Show success message
+                const alert = `
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Event added successfully!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `;
+                $(this).before(alert);
+            });
+
+            // Delete event handler
+            $('#eventList').on('click', '.delete-btn', function() {
+                $(this).closest('.col-md-6').fadeOut(300, function() {
+                    $(this).remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
