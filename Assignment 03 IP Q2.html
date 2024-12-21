@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Hide/Show Demo</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .container {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        #textToHide {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Handle disappear button click
+            $("#btnDisappear").click(function() {
+                $("#textToHide").fadeOut(2000); // 2000ms = 2 seconds
+            });
+
+            // Handle show button click
+            $("#btnShow").click(function() {
+                $("#textToHide").fadeIn(1000); // 1000ms = 1 second
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p id="textToHide">If you click on the "Button to Disappear" then it will disappear.</p>
+        
+        <button id="btnDisappear">Button to Disapper</button>
+        <button id="btnShow">Button to show</button>
+    </div>
+</body>
+</html>

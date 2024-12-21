@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Properties</title>
+    <style>
+        img {
+            border: 1px solid #ddd; 
+            border-radius: 4px;
+            padding: 5px;
+            border-color: #28a745; 
+            width: 150px; /* Thumbnail size */
+            float: left; /* Position to the left */
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 100%; /* Responsive for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://s3.amazonaws.com/images.seroundtable.com/google-click-1530532593.jpg" alt="Thumbnail Image">
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Headings by Class</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .heading-class {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Q2: Hide Headings by Class</h2>
+    <h3 class="heading-class">This is a heading with the class "heading-class".</h3>
+    <h3 class="heading-class">This is another heading with the class "heading-class".</h3>
+    <button onclick="hideHeadingsByClass('heading-class')">Hide Headings</button>
+
+    <script>
+        function hideHeadingsByClass(className) {
+            const headings = document.querySelectorAll(`.${className}`);
+            headings.forEach(heading => {
+                heading.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>

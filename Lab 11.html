@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Methods Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">This is a heading</h1>
+  <p id="paragraph">This is a <strong>paragraph</strong> with some HTML content.</p>
+  <input type="text" id="inputField" value="Initial value" />
+  <button id="showText">Show Text</button>
+  <button id="setText">Set Text</button>
+  <button id="showHTML">Show HTML</button>
+  <button id="setHTML">Set HTML</button>
+  <button id="showValue">Show Value</button>
+  <button id="setValue">Set Value</button>
+  <div class="output" id="output"></div>
+
+  <script>
+    $(document).ready(function () {
+      // Show the text content of the paragraph
+      $('#showText').click(function () {
+        const text = $('#paragraph').text();
+        $('#output').text('Text content: ' + text);
+      });
+
+      // Set the text content of the heading
+      $('#setText').click(function () {
+        $('#heading').text('New heading text');
+        $('#output').text('Heading text updated!');
+      });
+
+      // Show the HTML content of the paragraph
+      $('#showHTML').click(function () {
+        const html = $('#paragraph').html();
+        $('#output').text('HTML content: ' + html);
+      });
+
+      // Set the HTML content of the paragraph
+      $('#setHTML').click(function () {
+        $('#paragraph').html('This is <em>updated</em> HTML content.');
+        $('#output').text('Paragraph HTML updated!');
+      });
+
+      // Show the value of the input field
+      $('#showValue').click(function () {
+        const value = $('#inputField').val();
+        $('#output').text('Input field value: ' + value);
+      });
+
+      // Set the value of the input field
+      $('#setValue').click(function () {
+        $('#inputField').val('New input value');
+        $('#output').text('Input field value updated!');
+      });
+    });
+  </script>
+</body>
+</html>

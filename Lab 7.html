@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Paragraphs by Class</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .paragraph-class {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Q1: Hide Paragraphs by Class</h2>
+    <p class="paragraph-class">This is a paragraph with the class "paragraph-class".</p>
+    <p class="paragraph-class">This is another paragraph with the class "paragraph-class".</p>
+    <button onclick="hideParagraphsByClass('paragraph-class')">Hide Paragraphs</button>
+
+    <script>
+        function hideParagraphsByClass(className) {
+            const paragraphs = document.querySelectorAll(`.${className}`);
+            paragraphs.forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>

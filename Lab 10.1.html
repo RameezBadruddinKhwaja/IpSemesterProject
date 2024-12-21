@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Animate Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+    #animateButton {
+      margin-top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <button id="animateButton">Animate</button>
+
+  <script>
+    $(document).ready(function () {
+      $('#animateButton').click(function () {
+        $('#box').animate(
+          {
+            width: '200px',
+            height: '200px',
+            left: '300px',
+            top: '150px',
+            opacity: 0.5,
+          },
+          1000, // Animation duration in milliseconds
+          function () {
+            // Callback function after animation completes
+            alert('Animation completed!');
+          }
+        );
+      });
+    });
+  </script>
+</body>
+</html>

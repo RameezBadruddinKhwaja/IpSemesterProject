@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Manipulation</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .container {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        .nested-list {
+            margin-left: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Prepend text to paragraphs
+            $('#prependText').click(function() {
+                $('#paragraphs p').each(function() {
+                    $(this).prepend('Prepended text. ');
+                });
+            });
+
+            // Prepend text to list items
+            $('#prependListItem').click(function() {
+                $('#mainList > li').each(function() {
+                    let currentText = $(this).clone()    // Clone the element
+                        .children() // Get all the child elements
+                        .remove()   // Remove all the children
+                        .end()      // Go back to selected element
+                        .text()     // Get the text content
+                        .trim();    // Remove whitespace
+                    
+                    $(this).contents().first().replaceWith('Prepended item ' + currentText);
+                });
+            });
+
+            // Append text to paragraphs
+            $('#appendParagraph').click(function() {
+                $('#paragraphs p').each(function() {
+                    $(this).append(' Prepended text.');
+                });
+            });
+
+            // Append new item to list
+            $('#appendList').click(function() {
+                $('#mainList').append('<li>Nimco</li>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Paragraphs -->
+        <div id="paragraphs">
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+            <p>Paragraph 3</p>
+        </div>
+
+        <!-- List -->
+        <ol id="mainList">
+            <li>Tea
+                <ul class="nested-list">
+                    <li></li>
+                    <li>Black Tea</li>
+                </ul>
+            </li>
+            <li>Biscuit</li>
+            <li>Chips</li>
+            <li>Chocolate</li>
+            <li>Jelly</li>
+        </ol>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <button id="appendParagraph">This is for Append to paragraph text</button>
+            <button id="appendList">This is for Append to List Item</button>
+            <button id="prependText">Prepend text</button>
+            <button id="prependListItem">Prepend list item</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4 Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .option-group {
+            margin-top: 10px;
+        }
+
+        .dark-mode {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="options">Select from option 1 to option 6:</label>
+        <select id="options" required>
+            <option value="">Select an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6">Option 6</option>
+        </select>
+
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browsers" id="browser" placeholder="Choose your browser..." required>
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+
+        <div class="option-group">
+            <label>
+                <input type="checkbox" id="rememberMe"> Remember me
+            </label>
+        </div>
+
+        <button type="submit">Submit</button>
+
+        <div class="dark-mode">
+            <label>
+                <input type="checkbox"> Dark Mode
+            </label>
+        </div>
+    </form>
+
+</body>
+</html>
+Watch me go to Hey Cortana, Cortana. music

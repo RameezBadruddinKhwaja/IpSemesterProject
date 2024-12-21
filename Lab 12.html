@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Paragraphs -->
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+
+    <!-- List -->
+    <ol>
+        <li>Tea
+            <ul>
+                <li>Black Tea</li>
+            </ul>
+        </li>
+        <li>Biscuit</li>
+        <li>Chips</li>
+        <li>Chocolate</li>
+        <li>Jelly</li>
+    </ol>
+
+    <!-- Buttons -->
+    <button id="appendParagraph">This is for Append to paragraph text</button>
+    <button id="appendList">This is for Append to List Item</button>
+    <button id="prependParagraph">Prepend text</button>
+    <button id="prependList">Prepend list item</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Append text to paragraphs
+        document.getElementById("appendParagraph").addEventListener("click", function () {
+            let paragraphs = document.querySelectorAll("p");
+            paragraphs.forEach(function (para) {
+                para.innerHTML += " Prepended text.";
+            });
+        });
+
+        // Append text to list items
+        document.getElementById("appendList").addEventListener("click", function () {
+            let listItems = document.querySelectorAll("li");
+            listItems.forEach(function (item) {
+                item.innerHTML += " Nimco";
+            });
+        });
+
+        // Prepend text to paragraphs
+        document.getElementById("prependParagraph").addEventListener("click", function () {
+            let paragraphs = document.querySelectorAll("p");
+            paragraphs.forEach(function (para) {
+                para.innerHTML = "Prepended text. " + para.innerHTML;
+            });
+        });
+
+        // Prepend text to list items
+        document.getElementById("prependList").addEventListener("click", function () {
+            let listItems = document.querySelectorAll("li");
+            listItems.forEach(function (item) {
+                item.innerHTML = "Prepended item " + item.innerHTML;
+            });
+        });
+    </script>
+
+</body>
+</html>

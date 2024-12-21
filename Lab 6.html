@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Form 1</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form>
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <input type="email" class="form-control" placeholder="Enter Your email">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="form-label">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter Your password">
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="followMe">
+                        <label class="form-check-label" for="followMe">Pls follow me</label>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="mb-3">
+                        <label class="form-label">Comments:</label>
+                        <textarea class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <!-- Again Enter Email and Password -->
+                    <div class="mb-3">
+                        <label class="form-label">Again Enter Email and Password</label>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Enter email">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="password" class="form-control" placeholder="Enter password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Randomly Text -->
+                    <div class="mb-3">
+                        <label class="form-label">Randomly Text</label>
+                    </div>
+
+                    <!-- Choose Color -->
+                    <div class="mb-3">
+                        <label class="form-label">Choose Color</label>
+                        <input type="color" class="form-control form-control-color">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

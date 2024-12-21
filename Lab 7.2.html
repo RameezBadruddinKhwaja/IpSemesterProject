@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Element by ID with jQuery</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h2>Q3: Hide Element by ID</h2>
+    <div id="element-to-hide">This element will be hidden when the button is clicked.</div>
+    <button id="hide-button">Hide Element by ID</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#hide-button').click(function() {
+                $('#element-to-hide').hide();
+            });
+        });
+    </script>
+</body>
+</html>

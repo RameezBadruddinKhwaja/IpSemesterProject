@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Paragraph on Double Click (jQuery)</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p class="dblclick-hide">Click me - I will not go away</p>
+    <p class="dblclick-hide">Click two time then I will go away</p>
+
+    <script>
+        $(document).ready(function() {
+            $('.dblclick-hide').dblclick(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+</html>

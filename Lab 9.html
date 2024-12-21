@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Disappear/Show</title>
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Paragraph -->
+    <p id="paragraph">If you click on the "Button to Disappear" then it will disappear.</p>
+    
+    <!-- Buttons -->
+    <button id="btnDisappear">Button to Disappear</button>
+    <button id="btnShow">Button to show</button>
+
+    <!-- jQuery Script -->
+    <script>
+        $(document).ready(function() {
+            // Hide the paragraph on button click with speed 2000
+            $("#btnDisappear").click(function() {
+                $("#paragraph").hide(2000);
+            });
+
+            // Show the paragraph on button click with speed 1000
+            $("#btnShow").click(function() {
+                $("#paragraph").show(1000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Heading</title>
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Button -->
+    <button id="toggleButton">Toggle between hiding and showing the Heading</button>
+    
+    <!-- Heading -->
+    <h1 id="heading">Heading</h1>
+    
+    <!-- Paragraph -->
+    <p>Paragraph.</p>
+
+    <!-- jQuery Script -->
+    <script>
+        $(document).ready(function() {
+            // Toggle heading visibility on button click
+            $("#toggleButton").click(function() {
+                $("#heading").toggle();
+            });
+        });
+    </script>
+</body>
+</html>

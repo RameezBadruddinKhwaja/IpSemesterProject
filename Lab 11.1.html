@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Actions Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Heading and Paragraph -->
+    <h1 id="heading">Heading.</h1>
+    <p id="paragraph">This is another paragraph.</p>
+
+    <!-- Input Field -->
+    <label>Enter your name: </label>
+    <input type="text" id="nameInput" placeholder="">
+
+    <!-- Buttons -->
+    <br><br>
+    <button id="btnText">Set Through Text</button>
+    <br><br>
+    <button id="btnHTML">Set Through HTML</button>
+    <br><br>
+    <button id="btnValue">Set Through Value</button>
+
+    <!-- JavaScript/jQuery -->
+    <script>
+        // When "Set Through Text" button is clicked
+        $('#btnText').click(function() {
+            $('#heading').text('Heading. with .text()!');
+        });
+
+        // When "Set Through HTML" button is clicked
+        $('#btnHTML').click(function() {
+            $('#paragraph').text('Paragraph changed through .text()!');
+        });
+
+        // When "Set Through Value" button is clicked
+        $('#btnValue').click(function() {
+            $('#nameInput').val('Value changed through .val()!');
+        });
+    </script>
+</body>
+</html>

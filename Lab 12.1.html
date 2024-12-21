@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Div Element</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            margin-top: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .content {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div Content -->
+    <div id="content" class="content">
+        <h1>Heading 1</h1>
+        <p>paragraph</p>
+        <div class="button-container">
+            <button id="button1">Button 1</button>
+            <button id="button2">Button 2</button>
+        </div>
+    
+        <div class="button-container">
+             <button id="emptyButton">Empty the div element</button>
+    </div>
+</div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to empty the div content
+        function emptyDivContent() {
+            document.getElementById("content").innerHTML = '<button id="emptyButton">Empty the div element</button>';
+        }
+
+        // Attach event listeners to buttons
+        document.getElementById("button1").addEventListener("click", emptyDivContent);
+        document.getElementById("button2").addEventListener("click", emptyDivContent);
+        document.getElementById("emptyButton").addEventListener("click", emptyDivContent);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery children() Method</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            border: 2px solid red;
+            padding: 5px;
+        }
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        button {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Demonstration of jQuery children() Method</h2>
+
+    <!-- Parent Element -->
+    <div id="parentElement">
+        <h3>Heading 1</h3>
+        <p>This is a paragraph.</p>
+        <img src="https://via.placeholder.com/100" alt="Sample Image">
+        <span>This is a span element.</span>
+        <div>
+            <p>This paragraph is inside a nested div (not a direct child).</p>
+        </div>
+    </div>
+
+    <!-- Button -->
+    <button id="highlightChildren">Highlight Direct Children</button>
+
+    <!-- jQuery Script -->
+    <script>
+        $(document).ready(function () {
+            // Button click event
+            $("#highlightChildren").click(function () {
+                // Remove previous highlights
+                $("#parentElement *").removeClass("highlight");
+
+                // Apply highlight class to all direct children of #parentElement
+                $("#parentElement").children().addClass("highlight");
+            });
+        });
+    </script>
+
+</body>
+</html>
+
